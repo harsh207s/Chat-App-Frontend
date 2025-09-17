@@ -1,0 +1,143 @@
+:root {
+    --primary: #8a3ab9;
+    --secondary: #4c68d7;
+    --accent: #fbad50;
+    --dark: #121212;
+    --light: #f8f8f8;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+}
+
+.gradient-bg {
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+}
+
+.nav-active {
+    border-bottom: 2px solid white;
+}
+
+.story-ring {
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+    padding: 2px;
+}
+
+.reel-container {
+    scroll-snap-type: y mandatory;
+    height: calc(100vh - 140px);
+}
+
+.reel-item {
+    scroll-snap-align: start;
+}
+
+.message.sent {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 18px 18px 0 18px;
+}
+
+.message.received {
+    background-color: #efefef;
+    color: var(--dark);
+    border-radius: 18px 18px 18px 0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.theme-switch {
+    transition: all 0.3s ease;
+}
+
+.dark-mode {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.dark-card {
+    background-color: #1e1e1e;
+    color: var(--light);
+}
+
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #888;
+    margin: 0 2px;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+}
+
+.voice-message {
+    animation: voiceWave 1.5s infinite ease-in-out;
+}
+
+@keyframes voiceWave {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Dark mode styles */
+.dark-mode .bg-white {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .text-gray-800 {
+    color: #e5e5e5;
+}
+
+.dark-mode .text-gray-600 {
+    color: #a3a3a3;
+}
+
+.dark-mode .text-gray-500 {
+    color: #737373;
+}
+
+.dark-mode .border-gray-200 {
+    border-color: #404040;
+}
+
+.dark-mode .border-gray-100 {
+    border-color: #404040;
+}
+
+.dark-mode .hover\:bg-gray-50:hover {
+    background-color: #2a2a2a;
+}
